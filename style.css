@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'olympic_carrier_halftone_itIt';
+    src: url('./font/olympiccarrierhalfital-webfont.woff2') format('woff2'),
+         url('./font/olympiccarrierhalfital-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+::-moz-selection {
+    color: none;
+    background: none;
+}
+
+
+    body {
+    background-color: rgb(235, 232, 228);
+
+    }
+    main {
+        text-align: center;
+        margin:auto;
+        width: 80%;
+    }
+    
+
+    h1 {
+        color: #FCEC09;
+        text-shadow: -1.5px 0 #00a1b3, 0 1.5px #00a1b3, 1.5px 0 #00a1b3, 0 -1.5px #00a1b3;
+        font-size: 5.3rem;
+        text-decoration: underline; 
+        font-family: 'olympic_carrier_halftone_itIt';
+      
+    }
+
+    h2 {
+        color: #00b8cc;
+        font-family: 'olympic_carrier_halftone_itIt';
+        font-size: 4rem;
+        text-shadow: -1.5px 0 #FCEC09, 0 1.5px #FCEC09, 1.5px 0 #FCEC09, 0 -1.5px #00a1b3;
+        font-family: 'olympic_carrier_halftone_itIt';
+
+
+
+    }
+    table {
+        margin: auto;
+        border-collapse: collapse;
+        background-color: #00a1b3;
+        border: 3.5px solid #20242A;
+    
+    }
+    
+    td {
+        font-family: 'Trade Winds';
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+        width: 30px;
+        height: 30px; 
+        text-align: center;
+        color: 20242A;
+        background-position: center;
+        background-size: cover;
+        border: 1.75px solid #20242A;
+    }
+    
+    
+    td:hover {
+        cursor: pointer;
+    }
+
+    .gameBoard {
+        font-family: 'Trade Winds';
+        font-size: 2rem;
+
+    }
+
+    button {
+        font-family: 'olympic_carrier_halftone_itIt';
+        font-size: 4rem;
+
+
+    }
+  
+    .scoreBoard{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pulse {
+        width: 100px;
+        height: 100px;
+    }
+
+
+
+    .hidden {
+        background-color: #00a1b3;
+    }
+
+    .reaveled {
+        background-color: #c5b802;
+    }
+
+    .bombed {
+        background-color: red;
+    }
+
+    .flagged {
+        background-color: #c5b802;
+}
+
+
+
+    /* please work */
+    /* .pulse {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100px;
+        height: 100px;
+        background: red;
+        border-radius: 50%;
+
+    }
+
+
+    .pulse:before,
+    .pulse:after {
+        display: block;
+        position: absolute;
+        border: 50%;
+        border: 2px solid red;
+        left:-30px;
+        right: -30px;
+        top: - 30px;
+        bottom: -30px;
+        border-radius: 50%;
+        animation: animate 1.5s linear infinite;
+        opacity: 0;
+    }
+    .pulse:after {
+        animation-delay: .5s;
+    }
+    @keyframes animate {
+        0% 
+        {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        50%
+        {
+            opacity: 1;
+        }
+        100% 
+        {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    } */
