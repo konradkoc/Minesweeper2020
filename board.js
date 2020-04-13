@@ -1,13 +1,13 @@
-// class Cell {
-//     constructor(id, neighbours, isBombed, text, state){
-//         this.id = id;
-//         this.neighbours = neighbours;
-//         this.isBombed = isBombed;
-//         this.text = text;
-//         this.state = state;
-//     }
-// }
-//try dsdsd
+class Cell {
+    constructor(id, neighbours, isBombed, text, state){
+        this.id = id;
+        this.neighbours = neighbours;
+        this.isBombed = isBombed;
+        this.text = text;
+        this.state = state;
+    }
+}
+
 let gameIsOn = 1 ; 
 let arrOfCells = [];
 let neighbours = [];  
