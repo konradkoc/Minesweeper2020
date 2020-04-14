@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'olympic_carrier_halftone_itIt';
-    src: url('./font/olympiccarrierhalfital-webfont.woff2') format('woff2'),
-         url('./font/olympiccarrierhalfital-webfont.woff') format('woff');
+    src: url('./assets//font/olympiccarrierhalfital-webfont.woff2') format('woff2'),
+         url('./assets//font/olympiccarrierhalfital-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,151 +16,149 @@
 }
 
 
-    body {
-    background-color: rgb(235, 232, 228);
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
-    }
-    main {
-        text-align: center;
-        margin:auto;
-        width: 80%;
-    }
-    
+body {
+    background-image: url('./assets/low-angle-view-of-spiral-staircase-against-black-background-247676.jpg');
+    background-size: cover; 
+    background-position: center;
+    text-align: center;
+    color: #20242A;
+    width: 100vw;
+    height: 100vh;
+}
 
-    h1 {
-        color: #FCEC09;
-        text-shadow: -1.5px 0 #00a1b3, 0 1.5px #00a1b3, 1.5px 0 #00a1b3, 0 -1.5px #00a1b3;
-        font-size: 5.3rem;
-        text-decoration: underline; 
-        font-family: 'olympic_carrier_halftone_itIt';
-      
-    }
+main {
+    position: relative;
+    top: 10%;
+    margin: auto;
+}
 
-    h2 {
-        color: #00b8cc;
-        font-family: 'olympic_carrier_halftone_itIt';
-        font-size: 4rem;
-        text-shadow: -1.5px 0 #FCEC09, 0 1.5px #FCEC09, 1.5px 0 #FCEC09, 0 -1.5px #00a1b3;
-        font-family: 'olympic_carrier_halftone_itIt';
-
-
-
-    }
-    table {
-        margin: auto;
-        border-collapse: collapse;
-        background-color: #00a1b3;
-        border: 3.5px solid #20242A;
-    
-    }
-    
-    td {
-        font-family: 'Trade Winds';
-        font-size: 20px;
-        padding: 0;
-        margin: 0;
-        width: 30px;
-        height: 30px; 
-        text-align: center;
-        color: 20242A;
-        background-position: center;
-        background-size: cover;
-        border: 1.75px solid #20242A;
-    }
-    
-    
-    td:hover {
-        cursor: pointer;
-    }
-
-    .gameBoard {
-        font-family: 'Trade Winds';
-        font-size: 2rem;
-
-    }
-
-    button {
-        font-family: 'olympic_carrier_halftone_itIt';
-        font-size: 4rem;
-
-
-    }
-  
-    .scoreBoard{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .pulse {
-        width: 100px;
-        height: 100px;
-    }
-
-
-
-    .hidden {
-        background-color: #00a1b3;
-    }
-
-    .reaveled {
-        background-color: #c5b802;
-    }
-
-    .bombed {
-        background-color: red;
-    }
-
-    .flagged {
-        background-color: #c5b802;
+.gameBoard {
+    font-family: 'Trade Winds';
+    font-size: 2rem;
+    display: inline-flex;
+    flex-direction: column;
+    border: 3.5px solid #FCEC09;
+    text-shadow: -1.5px 0 #20242A, 0 1.5px #20242A, 1.5px 0 #20242A, 0 -1.5px #20242A;
+    background-color: rgb(2, 109, 197);
 }
 
 
+.title {
+    color: #FCEC09;
+    text-shadow: -2px 0 rgb(2, 109, 197), 0 2px rgb(2, 109, 197), 2px 0 rgb(2, 109, 197), 0 2px rgb(2, 109, 197);
+    font-size: 5.3rem;
+    font-family: 'olympic_carrier_halftone_itIt';
+    display: flex;
+    justify-content: center;
+}
 
-    /* please work */
-    /* .pulse {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 100px;
-        height: 100px;
-        background: red;
-        border-radius: 50%;
+table {
+    border-collapse: collapse;
+}
+    
+td {
+    font-family: 'Trade Winds';
+    font-size: 20px;
+    width: 30px;
+    height: 30px; 
+    border: 1.75px solid #20242A;
+    cursor: pointer;
+    text-shadow: none;
+}
 
-    }
+.newGame {
+    font-family: 'olympic_carrier_halftone_itIt';
+    font-size: 5rem;
+    flex-basis: 500px;        
+    border: 1.75px solid #20242A;
+    border-radius: 3px;
+    cursor: pointer;
+    color: rgb(2, 109, 197);
+    text-shadow: -1px 0 #FCEC09, 0 1px #FCEC09, 1px 0 #FCEC09, 0 1px #FCEC09;
+    font-family: 'olympic_carrier_halftone_itIt';
+    background-color: #FCEC09;
+}
+
+.newGame:hover {
+    transform: scale(1.05);
+}
+  
+.scoreBoard{
+    border-bottom: 3.5px solid #FCEC09;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(2, 109, 197);
+    align-items: center;
+    color: #FCEC09;
+}
+ 
+.score-container {
+    flex-basis: 100px;
+}
+
+.hidden {
+    background-color: rgb(2, 109, 197);
+}
+
+.reaveled {
+    background-color: #c5b802;
+}
+
+.bombed {
+    background-color: red;
+}
+
+.flagged {
+    background-color: #c5b802;
+    color: rgb(2, 109, 197);
+}
+
+/* 
+ .pulse {
+     position: relative;
+     width: 50%;
+     height: 50%;
+     background: rgb(2, 109, 197);
+     border-radius: 50%;
+     margin: auto;    
+ }
+
+ .pulse span {
+     position: absolute;
+     top: 0;
+     left: 0 ;
+     right: 0;
+     bottom: 0;
+     content: '';
+     border: 0.5px solid rgb(2, 109, 197);
+     border-radius: 50%;
+     animation: animate 2s linear infinite;
+ }
+
+ @keyframes animate {
+     0% {
+         transform: scale(0);
+     }
+     100% {
+         transform: scale(2);
+     }
+ }
 
 
-    .pulse:before,
-    .pulse:after {
-        display: block;
-        position: absolute;
-        border: 50%;
-        border: 2px solid red;
-        left:-30px;
-        right: -30px;
-        top: - 30px;
-        bottom: -30px;
-        border-radius: 50%;
-        animation: animate 1.5s linear infinite;
-        opacity: 0;
-    }
-    .pulse:after {
-        animation-delay: .5s;
-    }
-    @keyframes animate {
-        0% 
-        {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-        50%
-        {
-            opacity: 1;
-        }
-        100% 
-        {
-            transform: scale(1.2);
-            opacity: 0;
-        }
-    } */
+ .pulse span:nth-child(1) {
+     animation-delay: 0.7s;
+ }
+
+ .pulse span:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+.pulse span:nth-child(3) {
+    animation-delay: 2s;
+} */

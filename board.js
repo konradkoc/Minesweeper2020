@@ -16,24 +16,25 @@ let score = document.getElementById("score");
 let oneCell = document.querySelectorAll("td");
 
 //creating a table with js so we dont have to put all the rows in html and make it look bad
-function tableCreate(){
-    var tableContainer = document.querySelector(".tableHere");
+function tableCreate() {
+    const tableContainer = document.querySelector(".tableHere");
     tableContainer.textContent = "";
-    var tbl  = document.createElement('table')
+    const tbl  = document.createElement('table')
     //this var gonna be from 0 to 479 - and later gonna be asigned as an ID of every cell
     let cellNumber = 0 ;
     //creating 16 rows and 30 columns (expert minesweeper table)
     
-    for(var i = 0; i < 16; i++){
-        var tr = tbl.insertRow();
-        for(var j = 0; j < 30; j++){
+    for(let i = 0; i < 16; i++){
+        let tr = tbl.insertRow();
+        for(let j = 0; j < 30; j++){
             if(i == 16 && j == 30){
                 break;
             } else {
-                var td = tr.insertCell();
+                let td = tr.insertCell();
                 td.appendChild(document.createTextNode(""));
                 //setting id of every cell, so we have easy access to every cell in the table
-                td.setAttribute("id", cellNumber)
+                td.setAttribute('id', cellNumber)
+
                 cellNumber++;
             }
         }
@@ -43,7 +44,7 @@ function tableCreate(){
 tableCreate();
 
 //defining neighbours using ID
-function defineNeighbours(){
+const defineNeighbours = () => {
     for(i=0;i<480;i++){
         if(i===0){
             neighbours.push([i+1,i+30,i+31]);

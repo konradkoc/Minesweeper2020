@@ -5,13 +5,21 @@ var ifWin = 0 ;
 document.querySelectorAll('td').forEach(e => e.addEventListener("contextmenu", function(ev){
     ev.preventDefault();
 
-    if(gameIsOn === 1){
+    if(gameIsOn){
+        
+        
+
         if(arrOfCells[this.id].state === "hidden"){
             flagged.push(arrOfCells[this.id].id);
             arrOfCells[this.id].state = "flagged";
-            this.textContent = "X";
-            this.className = "flagged"
+            this.className = 'flagged'
+            this.appendChild(document.createElement('span'))
+            this.children[0].className = "fas fa-flag"
             bombsAmount++;
+
+            if(flagged.length === 99 ) {
+                    checkWin()
+            }
 
             var bombsLeft = 99 - bombsAmount;
             if(bombsLeft>9){       
@@ -41,7 +49,7 @@ document.querySelectorAll('td').forEach(e => e.addEventListener("contextmenu", f
                 }else {
                 document.getElementById("score").textContent = "-" + Math.abs(bombsLeft);
                 }
-                
+      
         
     }}
 }), false);

@@ -22,9 +22,9 @@ function reavelNeighbours() {
 }
 
 
-document.querySelectorAll('td').forEach(e => e.addEventListener("click", function(){
+document.querySelectorAll('td').forEach(e => e.addEventListener("click", function() {
 
-    if(gameIsOn === 1 && arrOfCells[this.id].state === "hidden"){
+    if(gameIsOn && arrOfCells[this.id].state === "hidden") {
         clockStop2 = 0;
         arrOfCells[this.id].state = "reaveled";
         this.className = "reaveled";
@@ -34,11 +34,14 @@ document.querySelectorAll('td').forEach(e => e.addEventListener("click", functio
                 this.textContent = "";
                 toReavel.push(arrOfCells[this.id]);
                 reavelNeighbours();
-            } else if(arrOfCells[this.id].isBombed === true){
-                youLoose();
+
+            } else if(arrOfCells[this.id].isBombed){
+                this.className = "bombed";
+                const span = document.createElement('span')
+                this.appendChild(span)
+                this.children[0].className = "fas fa-bomb"
                 stopTimer();
-                this.textContent = arrOfCells[this.id].text;
-                this.style.className = "bombed";
+                gameIsOn = false ;
             } else {       
                 this.textContent = arrOfCells[this.id].text;
             }      
