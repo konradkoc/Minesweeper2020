@@ -94,6 +94,7 @@ defineNeighbours();
         arrOfCells[bombRealArray[i]].text = "B";     
 
     }
+    return bombRealArray
     };
     changeB();
 
@@ -118,3 +119,4 @@ defineNeighbours();
     countBombs();   
 //By now we created table, bombed it and generate numbers around bombs we have every cell as an object with properties
 
+const cells = document.querySelectorAll('td')

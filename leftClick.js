@@ -1,6 +1,6 @@
 let toReavel = [];
 
-function reavelNeighbours() {
+const reavelNeighbours = () => {
 
     while(toReavel.length>0){
         for(i=0;i<toReavel[0].neighbours.length;i++){
@@ -21,29 +21,30 @@ function reavelNeighbours() {
     }
 }
 
+cells.forEach(e => e.addEventListener("click", function() {
 
-document.querySelectorAll('td').forEach(e => e.addEventListener("click", function() {
+    const clickedCell = arrOfCells[this.id]
 
-    if(gameIsOn && arrOfCells[this.id].state === "hidden") {
+    if(gameIsOn && clickedCell.state === "hidden") {
         clockStop2 = 0;
-        arrOfCells[this.id].state = "reaveled";
+        clickedCell.state = "reaveled";
         this.className = "reaveled";
 
         
-            if(arrOfCells[this.id].text === 0){
+            if(clickedCell.text === 0){
                 this.textContent = "";
                 toReavel.push(arrOfCells[this.id]);
                 reavelNeighbours();
 
-            } else if(arrOfCells[this.id].isBombed){
+            } else if(clickedCell.isBombed){
                 this.className = "bombed";
                 const span = document.createElement('span')
                 this.appendChild(span)
                 this.children[0].className = "fas fa-bomb"
-                stopTimer();
                 gameIsOn = false ;
+
             } else {       
-                this.textContent = arrOfCells[this.id].text;
+                this.textContent = clickedCell.text;
             }      
     }
 }));
