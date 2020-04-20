@@ -2,16 +2,11 @@
 let timer = 0;
 const timerEl = document.querySelector('#timer')
 
-const timerinnio = () => {
+function timerinnio() {
 
-    setInterval( () => {
-  
-    if(!gameIsOn) {
-        return
-    }
+    if (!gameIsOn) return
 
     timer += 1;
-
     if(timer < 10) {
         timerEl.textContent = "00"+ timer;
     } else if(timer > 9 && timer < 100) {
@@ -20,9 +15,10 @@ const timerinnio = () => {
         timerEl.textContent = timer;
     }}
 
-    , 1000)
 
-}
+let startTimer 
+const stopTimer = () => clearInterval(startTimer)
 
-document.querySelector('table').addEventListener("click", timerinnio, {once:true});
+
+document.querySelector('table').addEventListener("click", () => startTimer = setInterval(timerinnio, 1000) , {once:true});
 

@@ -26,7 +26,6 @@ cells.forEach(el => el.addEventListener("mousedown", function(){
         
         for(let i = 0 ; i <neighbours[this.id].length ; i ++) {
             if(arrOfCells[neighbours[this.id][i]].isBombed === true && arrOfCells[neighbours[this.id][i]].state !== "flagged"){
-                popUpNeighbours(this.id)
                 bombNearBy = 1;
             }
         }

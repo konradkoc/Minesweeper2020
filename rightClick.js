@@ -2,7 +2,6 @@ let flagged = [];
 let bombsAmount = 0 ;
 const scoreText = document.getElementById("score")
 
-
 cells.forEach(e => e.addEventListener("contextmenu", function(ev) {
     ev.preventDefault()
     if(!gameIsOn) {
@@ -22,7 +21,7 @@ cells.forEach(e => e.addEventListener("contextmenu", function(ev) {
         bombsAmount++;
         scoreUpgrade()
 
-        if(flagged.length === 3 ) {
+        if(flagged.length === 99 ) {
             checkWin()
         }
 
@@ -30,7 +29,8 @@ cells.forEach(e => e.addEventListener("contextmenu", function(ev) {
         clickedCell.state = "hidden"
         this.textContent = ""
         this.className = "hidden"
-        const index = flagged.indexOf(clickedCell)
+        //get rid of the cell from flagged
+        const index = flagged.indexOf(clickedCell.id)
         flagged.splice(index,1)
    
         bombsAmount--;   

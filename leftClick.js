@@ -24,30 +24,33 @@ const reavelNeighbours = () => {
 cells.forEach(e => e.addEventListener("click", function() {
 
     const clickedCell = arrOfCells[this.id]
-
+   
     if(gameIsOn && clickedCell.state === "hidden") {
-        clockStop2 = 0;
         clickedCell.state = "reaveled";
         this.className = "reaveled";
 
-        
-            if(clickedCell.text === 0){
-                this.textContent = "";
-                toReavel.push(arrOfCells[this.id]);
-                reavelNeighbours();
-
-            } else if(clickedCell.isBombed){
+            if (clickedCell.isBombed === true){
                 this.className = "bombed";
                 const span = document.createElement('span')
                 this.appendChild(span)
                 this.children[0].className = "fas fa-bomb"
                 gameIsOn = false ;
+                stopTimer()
 
-            } else {       
+            } else if (clickedCell.text === 0) {
+                this.textContent = "";
+                toReavel.push(arrOfCells[this.id]);
+                reavelNeighbours();
+            }  else {       
                 this.textContent = clickedCell.text;
-            }      
+            }   
+            
+           
+            
+              
     }
-}));
+}
+));
 
 
     
