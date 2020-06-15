@@ -8,7 +8,6 @@ class Cell {
     }
 }
 
-//lalala
 
 let gameIsOn = true ; 
 let arrOfCells = [];
