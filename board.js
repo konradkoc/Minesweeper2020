@@ -8,6 +8,8 @@ class Cell {
     }
 }
 
+//lalala
+
 let gameIsOn = true ; 
 let arrOfCells = [];
 const neighbours = []; 
